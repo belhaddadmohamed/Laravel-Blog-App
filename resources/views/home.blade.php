@@ -13,28 +13,33 @@
             </div>
         @endsection
 
-        <div class="mb-10">
+        <div class="mb-10 w-full">
             <div class="mb-16">
                 <h2 class="mt-16 mb-5 text-3xl text-yellow-500 font-bold">Featured Posts</h2>
                 <div class="w-full">
+
                     <div class="grid grid-cols-3 gap-10 w-full">
-                        
-
+                    @foreach($featuredPosts as $post)
                         <div class="md:col-span-1 col-span-3">
-
-                                <div>
-                                    <img class="w-full rounded-xl"
-                                        src="https://via.placeholder.com/640x480.png/0000ee?text=corrupti">
-                                </div>
-                                <div class="mt-3">
-                                    <div class="flex items-center mb-2">
-                                        <p class="text-gray-500 text-sm">2023-08-29</p>
-                                    </div>
-                                    <a class="text-xl font-bold text-gray-900">Mary Berge</a>
-                                </div>
+                            <x-posts.post-card :post="$post" />
+                            {{-- <h1>{{$post->title}}</h1> --}}
                         </div>
 
+                        <!-- <div class="md:col-span-1 col-span-3">
+                            <div>
+                                <img class="w-full rounded-xl"
+                                    src="https://via.placeholder.com/640x480.png/0000ee?text=corrupti">
+                            </div>
+                            <div class="mt-3">
+                                <div class="flex items-center mb-2">
+                                    <p class="text-gray-500 text-sm">2023-08-29</p>
+                                </div>
+                                <a class="text-xl font-bold text-gray-900">Mary Berge</a>
+                            </div>
+                        </div> -->
+                    @endforeach
                     </div>
+
                 </div>
                 <a class="mt-10 block text-center text-lg text-yellow-500 font-semibold"
                     href="http://127.0.0.1:8000/blog">More
@@ -46,23 +51,15 @@
             <div class="w-full mb-5">
                 <div class="grid grid-cols-3 gap-10 gap-y-32 w-full">
 
-
-                    <div class="md:col-span-1 col-span-3">
-                        <a
-                            href="http://127.0.0.1:8000/blog/non-et-molestiae-repellat-omnis-amet-mollitia-necessitatibus">
-                            <div>
-                                <img class="w-full rounded-xl"
-                                    src="https://via.placeholder.com/640x480.png/00bb77?text=et">
+                    @foreach ($latestPosts as $post)
+                        <div class="md:col-span-1 col-span-3">
+                            <div class="md:col-span-1 col-span-3">
+                                <x-posts.post-card :post="$post" />
+                                {{-- <h1>{{$post->title}}</h1> --}}
                             </div>
-                            <div class="mt-3">
-                                <div class="flex items-center mb-2">
-                                    <p class="text-gray-500 text-sm">2023-08-29</p>
-                                </div>
-                                <h3 class="text-xl font-bold text-gray-900">Lysanne Schmeler</h3>
-                            </div>
-                        </a>
-                    </div>
-
+                        </div>
+                    @endforeach
+                    
                 </div>
             </div>
             <a class="mt-10 block text-center text-lg text-yellow-500 font-semibold"
