@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeController::class)->name('home');
 
-Route::get('/', PostController::class)->name('home');
+// Route::get('/', PostController::class)->name('xxxx');
 
 Route::middleware([
     'auth:sanctum',
