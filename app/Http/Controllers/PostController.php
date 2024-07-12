@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    function index(){
-        return view('posts.index', ['posts' => Post::all()->take(20)]);
+    public function index(){
+        return view('posts.index', ['posts' => Post::take(20)->get()]);
     }
 }
