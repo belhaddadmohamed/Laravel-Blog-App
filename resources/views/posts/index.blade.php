@@ -15,7 +15,7 @@
 
     <div class="mb-10 w-full">
         <div class="mb-16">
-            <h2 class="mt-16 mb-5 text-3xl text-yellow-500 font-bold">Featured Posts</h2>
+            <h2 class="mt-16 mb-5 text-3xl text-yellow-500 font-bold">Posts</h2>
             <div class="w-full">
 
                 <div class="grid grid-cols-3 gap-10 w-full">
