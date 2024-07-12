@@ -11,6 +11,7 @@ class Post extends Model
     use HasFactory;
 
     public function scopePublished($query){
+        // We can omit 'return'
         $query->where('published_at', '<=', Carbon::now());
     }
 
