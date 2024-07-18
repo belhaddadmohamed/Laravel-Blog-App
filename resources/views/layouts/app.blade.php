@@ -23,18 +23,22 @@
     <body class="font-sans antialiased">
         <x-banner />
 
-            @include('layouts.partials.header')
-
-            @yield('hero')
-
-            <main class="container mx-auto px-5 flex flex-grow">
-                {{ $slot }}
-            </main>
-
-            @include('layouts.partials.footer')
+        {{-- Include the Header --}}
+        @include('layouts.partials.header')
+        
+        {{-- Include the Hero Section --}}
+        @yield('hero')
+        
+        <main class="container mx-auto px-5 flex flex-grow">
+            {{ $slot }}
+        </main>
+        
+        {{-- Include the Footer --}}
+        @include('layouts.partials.footer')
 
         @stack('modals')
 
         @livewireScripts
     </body>
+
 </html>
