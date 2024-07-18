@@ -38,6 +38,7 @@ class Post extends Model
     }
 
     public function scopePublished($query){
+        // You need to remove 'scope' in the usecase
         // We can omit 'return'
         $query->where('published_at', '<=', Carbon::now());
     }
