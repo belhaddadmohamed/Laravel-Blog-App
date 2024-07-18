@@ -1,11 +1,13 @@
 @props(['active'])
 
 @php
-$classes = ($active ?? false)
-            ? 'inline-flex items-center hover:text-yellow-900 text-sm text-yellow-500'
-            : 'inline-flex items-center hover:text-yellow-900 text-sm text-gray-500';
+    $classes = ($active ?? false)
+                ? 'inline-flex items-center hover:text-yellow-900 text-sm text-yellow-500'
+                : 'inline-flex items-center hover:text-yellow-900 text-sm text-gray-500';
 @endphp
 
+
+{{-- Slot is the section where we provide the content --}}
 <a wire:navigate {{ $attributes->merge(['class' => $classes]) }}>
     {{ $slot }}
 </a>
