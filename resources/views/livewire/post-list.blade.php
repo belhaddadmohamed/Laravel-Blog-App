@@ -6,7 +6,7 @@
         </div>
     </div>
     <div class="py-4">
-        @foreach ($this->$posts as $post)
+        @foreach ($this->posts as $post)
             <x-posts.post-item :post="$post" />
         @endforeach
     </div>
